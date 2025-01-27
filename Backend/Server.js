@@ -27,6 +27,23 @@ app.get("/get",(req,res)=>{
     .catch(err=>res.json(err))
 })
 
+app.put("/update/:id",(req,res) => {
+  const {id} = req.params;
+  TodoModel.findByIdAndUpdate({_id:id}, {done:true})
+  .then(result => res.json(result) )
+  .catch(err =>res.json(err) )
+})
+
+app.delete('/delete/:id', async (req, res) => {
+  try {
+      const id = req.params.id;
+      await TodoModel.findByIdAndDelete(id);
+      res.status(200).send({ message: "Task deleted successfully" });
+  } catch (err) {
+      res.status(500).send({ error: "Failed to delete task" });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
