@@ -7,13 +7,13 @@ const Home = () => {
     const [todos, setTodos] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:3000/get")
+        axios.get("https://todoapp-tzrk.onrender.com/get")
             .then((result) => setTodos(result.data))
             .catch((err) => console.log(err));
     }, []);
 
     const handleEdit = (id) => {
-        axios.put("http://localhost:3000/update/" + id)
+        axios.put("https://todoapp-tzrk.onrender.com/update/" + id)
             .then(() => {
                 setTodos((prevTodos) =>
                     prevTodos.map((todo) =>
@@ -25,7 +25,7 @@ const Home = () => {
     };
 
     const addTask = (newTask) => {
-        axios.post("http://localhost:3000/add", { task: newTask })
+        axios.post("https://todoapp-tzrk.onrender.com/add", { task: newTask })
             .then((result) => {
                 setTodos((prevTodos) => [...prevTodos, result.data]);
             })
@@ -33,7 +33,7 @@ const Home = () => {
     };
 
     const handleDelete = (id) => {
-        axios.delete("http://localhost:3000/delete/" + id)
+        axios.delete("https://todoapp-tzrk.onrender.com/delete/" + id)
             .then(() => {
                 setTodos((prevTodos) => prevTodos.filter((todo) => todo._id !== id));
             })
