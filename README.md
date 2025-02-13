@@ -5,7 +5,7 @@ It's a simple Todo App , it was build while learning MERN concepts. It perfoms b
 ## Screenshots
 
 
-![Screenshot 1](https://drive.google.com/file/uc?id=d/1n4yhUNLq0HKKwEwuYnfzX04TU1Zg6Muw)
+![Screenshot 1](https://drive.google.com/file/d/1n4yhUNLq0HKKwEwuYnfzX04TU1Zg6Muw/view?usp=sharing)
 
 ## Features
 
