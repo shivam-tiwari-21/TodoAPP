@@ -10,7 +10,13 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+
+app.use(cors({
+    origin: "https://todoapp-tzrk.onrender.com", 
+    methods: "GET,POST,PUT,DELETE",
+    credentials: true
+}));
+
 app.use(express.json());
 
 // Connect to MongoDB
