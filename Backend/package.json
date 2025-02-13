@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "type": "module",
   "main": "Server.js",
-  "scripts": {
-    "build":"npm i && npm i --prefix ../Frontend && npm run build --prefix Frontend",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon Server.js",
-    "start": "node Server.js"
-  },
+ "scripts": {
+  "build": "npm install && cd ../Frontend && npm install && npm run build",
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "dev": "nodemon Server.js",
+  "start": "node Server.js"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
